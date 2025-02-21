@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chest Points Calculator</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; margin: 50px; }
+        .container { max-width: 400px; margin: auto; padding: 20px; border: 1px solid #ccc; border-radius: 10px; }
+        input { width: 50px; margin-bottom: 10px; text-align: center; }
+        button { padding: 10px 15px; cursor: pointer; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Chest Points Calculator</h2>
+
+        <label>Bronze Chests (1p):</label>
+        <input type="number" id="bronze" value="0" min="0"><br>
+
+        <label>Silver Chests (10p):</label>
+        <input type="number" id="silver" value="0" min="0"><br>
+
+        <label>Gold Chests (20p):</label>
+        <input type="number" id="gold" value="0" min="0"><br>
+
+        <label>Pet Chests (50p):</label>
+        <input type="number" id="pet" value="0" min="0"><br>
+
+        <button onclick="calculatePoints()">Calculate</button>
+
+        <h3>Total Points: <span id="result">0</span></h3>
+    </div>
+
+    <script>
+        function calculatePoints() {
+            const bronze = Number(document.getElementById("bronze").value) || 0;
+            const silver = Number(document.getElementById("silver").value) || 0;
+            const gold = Number(document.getElementById("gold").value) || 0;
+            const pet = Number(document.getElementById("pet").value) || 0;
+
+            const totalPoints = (bronze * 1) + (silver * 10) + (gold * 20) + (pet * 50);
+            document.getElementById("result").textContent = totalPoints;
+        }
+    </script>
+
+</body>
+</html>
